@@ -22,6 +22,16 @@ class AppThemes {
       bodyMedium: TextStyle(
           color: AppColorScheme
               .lightColorScheme.onSurface), // Updated to use onSurface
+      headlineLarge: TextStyle(
+        fontSize: 24.0,
+        fontWeight: FontWeight.bold,
+        color: Colors.black,
+      ),
+      titleMedium: TextStyle(
+        fontSize: 18.0,
+        fontWeight: FontWeight.bold,
+        color: Color.fromRGBO(33, 34, 38, 1),
+      ),
     ),
     colorScheme: AppColorScheme.lightColorScheme
         .copyWith(error: AppColorScheme.lightColorScheme.error)
@@ -47,8 +57,19 @@ class AppThemes {
           color: AppColorScheme
               .darkColorScheme.onSurface), // Updated to use onSurface
       bodyMedium: TextStyle(
+          fontSize: 15,
           color: AppColorScheme
               .darkColorScheme.onSurface), // Updated to use onSurface
+      headlineLarge: TextStyle(
+        fontSize: 24.0,
+        fontWeight: FontWeight.bold,
+        color: Colors.white,
+      ),
+      titleMedium: TextStyle(
+        fontSize: 18.0,
+        fontWeight: FontWeight.bold,
+        color: Colors.grey[300],
+      ),
     ),
     colorScheme: AppColorScheme.darkColorScheme
         .copyWith(error: AppColorScheme.darkColorScheme.error)
