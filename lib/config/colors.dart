@@ -4,8 +4,8 @@ class LightThemeColors {
   static const Color primary = Color(0xFF0063F4); // Main color
   static const Color secondary =
       Color(0xFF03DAC6); // Teal for secondary elements
-  static const Color surface = Color(0xFFFFFFFF); // Light surface color
-  static const Color background = Color(0xFFF5F5F5); // Light background color
+  static const Color surface = Color(0xFFEBF3FF); // Light surface color
+  static const Color background = Color(0xFFEBF3FF); // Light background color
   static const Color error = Color(0xFFB00020); // Red for error states
   static const Color onPrimary =
       Color(0xFFFFFFFF); // White text on primary color

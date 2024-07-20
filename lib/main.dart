@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:paradise_pay/provider/theme_provider.dart';
+import 'package:paradise_pay/src/views/splash_screen.dart';
 import "package:provider/provider.dart";
 
 void main() {
@@ -17,9 +18,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<ThemeProvider>(builder: (context, themeProvider, child) {
       return MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: themeProvider.getTheme,
-        home: const MyHomePage(title: 'Flutter Demo Home Page'),
+        home: const SplashScreen(
+          
+        ),
       );
     });
   }
