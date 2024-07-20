@@ -19,7 +19,7 @@ class LightThemeColors {
 }
 
 class DarkThemeColors {
-  static const Color primary = Color.fromARGB(255, 77, 78, 80); // Main color
+  static const Color primary = Color(0xFF0063F4); // Main color
   static const Color secondary =
       Color(0xFF03DAC6); // Teal for secondary elements
   static const Color surface = Color(0xFF121212); // Dark surface color

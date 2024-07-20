@@ -9,11 +9,12 @@ class AppThemes {
     scaffoldBackgroundColor:
         AppColorScheme.lightColorScheme.surface, // Updated to use surface
     appBarTheme: AppBarTheme(
-      color: AppColorScheme.lightColorScheme.primary,
+      color: AppColorScheme.lightColorScheme.secondary,
     ),
     buttonTheme: ButtonThemeData(
       buttonColor: AppColorScheme.lightColorScheme.primary,
       textTheme: ButtonTextTheme.primary,
+      minWidth: 327,
     ),
     textTheme: TextTheme(
       bodyLarge: TextStyle(
@@ -49,8 +50,8 @@ class AppThemes {
       color: AppColorScheme.darkColorScheme.onSecondary,
     ),
     buttonTheme: ButtonThemeData(
-      buttonColor: AppColorScheme.darkColorScheme.primary,
-      textTheme: ButtonTextTheme.primary,
+      buttonColor: AppColorScheme.lightColorScheme.primary,
+      textTheme: ButtonTextTheme.accent,
     ),
     textTheme: TextTheme(
       bodyLarge: TextStyle(

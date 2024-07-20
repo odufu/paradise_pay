@@ -9,7 +9,7 @@ class SvgAssets {
   static const List<Map<String, String>> welcomeText = [
     {
       "image": "assets/images/welcome1.svg",
-      "heading": "Easiest Way To Receive Money From  Your Bayer",
+      "heading": "Easiest Way To Receive Money From Your Buyer",
       "subTitle": "Scan QR codes to make a direct transaction."
     },
     {
@@ -28,4 +28,16 @@ class SvgAssets {
 
 class AppConstants {
   static const double kPadding = 20;
+  static const double kPadding2 = 10;
+
+  //MARGINS
+  static const double kMargin = 20;
+  static const double kMargin2 = 10;
+
+  static const double kButtonWidth = 323;
+  static const double kButtonHeight = 49;
+
+  //BUTTON TEXTS
+  static const String kSignupButtonIndicator = "Get Started";
+  static const String kLoginButtonIndicator = "Log in";
 }

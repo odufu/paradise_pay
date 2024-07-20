@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:paradise_pay/config/constants.dart';
 import 'package:paradise_pay/src/widgets/app_button.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:paradise_pay/src/widgets/page_indicator.dart';
 import 'widgets/info_card.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -12,6 +13,8 @@ class WelcomeScreen extends StatefulWidget {
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
   final PageController _pageController = PageController();
+
+//DUMMY DETAILS WHICH WILL BE CHANGED LATER
 
   static const List<Map<String, String>> welcomeText = [
     {
@@ -30,41 +33,51 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 30),
+        padding: const EdgeInsets.symmetric(
+            vertical: AppConstants.kPadding, horizontal: AppConstants.kPadding),
         child: Column(
           children: [
             Expanded(
+              flex: 1,
               child: PageView.builder(
                 controller: _pageController,
                 itemCount: welcomeText.length,
                 itemBuilder: (context, index) {
                   final item = welcomeText[index];
-                  return InfoCard(
-                    image: item['image']!,
-                    heading: item['heading']!,
-                    subtitle: item['subTitle']!,
+                  return Column(
+                    children: [
+                      InfoCard(
+                        image: item['image']!,
+                        heading: item['heading']!,
+                        subtitle: item['subTitle']!,
+                      ),
+                      PageIndicator(
+                          pageController: _pageController,
+                          welcomeText: welcomeText),
+                      const SizedBox(height: AppConstants.kMargin),
+                    ],
                   );
                 },
               ),
             ),
-            SmoothPageIndicator(
-              controller: _pageController,
-              count: welcomeText.length,
-              effect: WormEffect(
-                dotHeight: 8.0,
-                dotWidth: 8.0,
-                activeDotColor: Theme.of(context).primaryColor,
-              ),
-            ),
-            const SizedBox(height: 20.0),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                AppButton(actionText: "Sign Up", action: () {}),
-                AppButton(actionText: "Login", action: () {})
+                AppButton(
+                    actionText: AppConstants.kSignupButtonIndicator,
+                    backGroundColor: Theme.of(context).colorScheme.primary,
+                    action: () {}),
+                const SizedBox(
+                  height: AppConstants.kMargin2,
+                ),
+                AppButton(
+                    actionText: AppConstants.kLoginButtonIndicator,
+                    backGroundColor: Theme.of(context).colorScheme.onPrimary,
+                    color: Theme.of(context).colorScheme.primary,
+                    borderColor: Theme.of(context).colorScheme.primary,
+                    action: () {})
               ],
             ),
-            SizedBox(height: 20.0),
           ],
         ),
       ),

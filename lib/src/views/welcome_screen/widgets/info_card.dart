@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:paradise_pay/config/constants.dart';
 
 class InfoCard extends StatelessWidget {
   final String image;
@@ -16,27 +17,24 @@ class InfoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 50),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SvgPicture.asset(image), // or Image.asset if using local assets
-            SizedBox(height: 10.0),
-            Text(
-              heading,
-              style: Theme.of(context).textTheme.titleMedium,
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(height: 10.0),
-            Text(
-              subtitle,
-              style: Theme.of(context).textTheme.bodyLarge,
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ),
+      padding: const EdgeInsets.symmetric(vertical: AppConstants.kPadding),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          SvgPicture.asset(image), // or Image.asset if using local assets
+          const SizedBox(height: AppConstants.kMargin2),
+          Text(
+            heading,
+            style: Theme.of(context).textTheme.titleMedium,
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: AppConstants.kMargin2),
+          Text(
+            subtitle,
+            style: Theme.of(context).textTheme.bodyLarge,
+            textAlign: TextAlign.center,
+          ),
+        ],
       ),
     );
   }
