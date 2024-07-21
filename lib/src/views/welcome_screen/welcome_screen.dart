@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:paradise_pay/config/constants.dart';
+import 'package:paradise_pay/src/views/login/login_screen.dart';
+import 'package:paradise_pay/src/views/signup_screen/signup_screen.dart';
 import 'package:paradise_pay/src/widgets/app_button.dart';
 import 'package:paradise_pay/src/widgets/page_indicator.dart';
 import 'widgets/info_card.dart';
@@ -66,7 +68,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 AppButton(
                     actionText: AppConstants.kSignupButtonIndicator,
                     backGroundColor: Theme.of(context).colorScheme.primary,
-                    action: () {}),
+                    action: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SignUpScreen()),
+                      );
+                    }),
                 const SizedBox(
                   height: AppConstants.kMargin2,
                 ),
@@ -75,7 +82,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     backGroundColor: Theme.of(context).colorScheme.onPrimary,
                     color: Theme.of(context).colorScheme.primary,
                     borderColor: Theme.of(context).colorScheme.primary,
-                    action: () {})
+                    action: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginScreen()),
+                      );
+                    })
               ],
             ),
           ],

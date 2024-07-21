@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class LightThemeColors {
   static const Color primary = Color(0xFF0063F4); // Main color
   static const Color secondary =
-      Color(0xFF03DAC6); // Teal for secondary elements
+      Color.fromARGB(255, 141, 141, 141); // Teal for secondary elements
   static const Color surface = Color(0xFFEBF3FF); // Light surface color
   static const Color background = Color(0xFFEBF3FF); // Light background color
   static const Color error = Color(0xFFB00020); // Red for error states
@@ -21,7 +21,7 @@ class LightThemeColors {
 class DarkThemeColors {
   static const Color primary = Color(0xFF0063F4); // Main color
   static const Color secondary =
-      Color(0xFF03DAC6); // Teal for secondary elements
+      Color.fromARGB(255, 143, 143, 143); // Teal for secondary elements
   static const Color surface = Color(0xFF121212); // Dark surface color
   static const Color background =
       Color(0xFF121212); // Matching the surface color for uniformity

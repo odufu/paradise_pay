@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'color_schemes.dart';
 
 class AppThemes {
@@ -16,24 +17,7 @@ class AppThemes {
       textTheme: ButtonTextTheme.primary,
       minWidth: 327,
     ),
-    textTheme: TextTheme(
-      bodyLarge: TextStyle(
-          color: AppColorScheme
-              .lightColorScheme.onSurface), // Updated to use onSurface
-      bodyMedium: TextStyle(
-          color: AppColorScheme
-              .lightColorScheme.onSurface), // Updated to use onSurface
-      headlineLarge: TextStyle(
-        fontSize: 24.0,
-        fontWeight: FontWeight.bold,
-        color: Colors.black,
-      ),
-      titleMedium: TextStyle(
-        fontSize: 18.0,
-        fontWeight: FontWeight.bold,
-        color: Color.fromRGBO(33, 34, 38, 1),
-      ),
-    ),
+    textTheme: GoogleFonts.poppinsTextTheme(),
     colorScheme: AppColorScheme.lightColorScheme
         .copyWith(error: AppColorScheme.lightColorScheme.error)
         .copyWith(secondary: AppColorScheme.lightColorScheme.secondary)

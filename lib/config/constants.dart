@@ -24,11 +24,41 @@ class SvgAssets {
   static const double logoWidth = 120;
   static const double companyNameHeight = 40;
   static const double companyNameWidth = 191;
+
+  //REGISTER SCREEN
+  static const String googleIcon = "assets/images/google.svg";
+  static const String appleIcon = "assets/images/apple.svg";
+  static const String nigeria = "assets/images/nigeria.svg";
+
+  //OTP SCREEN
+  static const String success = "assets/images/success.svg";
+
+  //Login SCREEN
+  static const String face = "assets/images/face.svg";
+
+  //HOME SCREEN
+
+  static const String scanToPay = "assets/images/scanToPay.svg";
+  static const String getQrCode = "assets/images/getQrCode.svg";
+  static const String sendMoney = "assets/images/sendMoney.svg";
+  static const String requestMoney = "assets/images/requestMoney.svg";
+  static const String payBilles = "assets/images/payBilles.svg";
+  static const String more = "assets/images/more.svg";
+  static const String hamBurgerMenu = "assets/images/hamBurgerMenu.svg";
+  static const String kateOshawa = "assets/images/kateOshawa.svg";
+  static const String usmanOloja = "assets/images/usmanOlaja.svg";
+}
+
+class PngAssets {
+  static const String usman = "assets/images/usman.png";
+  static const String gift = "assets/images/gift.png";
+  static const String kate = "assets/images/kate.png";
 }
 
 class AppConstants {
   static const double kPadding = 20;
   static const double kPadding2 = 10;
+  static const double kAppBigPadding = 25;
 
   //MARGINS
   static const double kMargin = 20;
@@ -40,4 +70,8 @@ class AppConstants {
   //BUTTON TEXTS
   static const String kSignupButtonIndicator = "Get Started";
   static const String kLoginButtonIndicator = "Log in";
+
+  //REGISTRATION SCREEEN IN-APP-TEXTS
+
+  static const String kSignUpActionPhrase = "Create Your Account";
 }
