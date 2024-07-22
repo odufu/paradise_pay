@@ -10,9 +10,12 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Size screenSize = MediaQuery.of(context).size;
+    final width = screenSize.width;
     return Scaffold(
       drawer: NavBar(),
       appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.surface,
         elevation: 0,
         leading: Builder(
           builder: (context) {
@@ -35,69 +38,123 @@ class HomeScreen extends StatelessWidget {
           SizedBox(width: 10),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'Total Balance',
-              style: TextStyle(fontSize: 16),
-            ),
-            const SizedBox(height: 5),
-            Text(
-              '₦ 156,330.00',
-              style: Theme.of(context).textTheme.headlineLarge,
-            ),
-            const SizedBox(height: 10),
-            AppButton(
-                actionText: "+ Add Money",
-                action: () {
-                  print("Yet to Impliment Add money");
-                }),
-            const SizedBox(height: 20),
-            const Text(
-              'Quick actions',
-              style: TextStyle(color: Colors.grey, fontSize: 16),
-            ),
-            const SizedBox(height: 10),
-            GridView.count(
-              crossAxisCount: 3,
-              shrinkWrap: true,
-              mainAxisSpacing: 10,
-              crossAxisSpacing: 10,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+              flex: 7,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'Total Balance',
+                      style: TextStyle(fontSize: 16),
+                    ),
+                    const SizedBox(height: 5),
+                    Text(
+                      '₦ 156,330.00',
+                      style: Theme.of(context).textTheme.headlineLarge,
+                    ),
+                    const SizedBox(height: 10),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        AppButton(
+                            actionText: "+ Add Money",
+                            action: () {
+                              print("Yet to Impliment Add money");
+                            }),
+                      ],
+                    ),
+                    const SizedBox(height: 10),
+                    const Text(
+                      'Quick actions',
+                      style: TextStyle(color: Colors.grey, fontSize: 16),
+                    ),
+                    GridView.count(
+                      crossAxisCount: 3,
+                      shrinkWrap: true,
+                      mainAxisSpacing: 3,
+                      crossAxisSpacing: 10,
+                      children: [
+                        _buildQuickAction(Icons.qr_code, 'Scan to Pay'),
+                        _buildQuickAction(Icons.qr_code_2, 'Get QR Code'),
+                        _buildQuickAction(Icons.send, 'Send Money'),
+                        _buildQuickAction(Icons.request_page, 'Request Money'),
+                        _buildQuickAction(Icons.receipt, 'Pay bills'),
+                        _buildQuickAction(Icons.more_horiz, 'More'),
+                      ],
+                    ),
+                    const SizedBox(height: 10),
+                  ],
+                ),
+              )),
+          Expanded(
+            flex: 4,
+            child: Stack(
               children: [
-                _buildQuickAction(Icons.qr_code, 'Scan to Pay'),
-                _buildQuickAction(Icons.qr_code_2, 'Get QR Code'),
-                _buildQuickAction(Icons.send, 'Send Money'),
-                _buildQuickAction(Icons.request_page, 'Request Money'),
-                _buildQuickAction(Icons.receipt, 'Pay bills'),
-                _buildQuickAction(Icons.more_horiz, 'More'),
+                Positioned.fill(
+                  child: Container(
+                    height: 100,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 10),
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.primary,
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(30),
+                          topRight: Radius.circular(30)),
+                    ),
+                    child: Text(
+                      textAlign: TextAlign.center,
+                      'Refer and earn ₦800 when the user received their first payment from buyer',
+                      style: TextStyle(
+                          color: Theme.of(context).colorScheme.onPrimary),
+                    ),
+                  ),
+                ),
+                Positioned.fill(
+                  top: 90,
+                  child: Container(
+                      height: 100,
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 10),
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).colorScheme.surface,
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(30),
+                            topRight: Radius.circular(30)),
+                      ),
+                      child: TransactionHistroy()),
+                ),
+                Positioned(
+                  top: 60,
+                  child: Container(
+                      width: width,
+                      height: 60,
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 10),
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).colorScheme.surface,
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(30),
+                            topRight: Radius.circular(30)),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: const Text(
+                          'Transactions',
+                          style: TextStyle(color: Colors.grey, fontSize: 16),
+                        ),
+                      )),
+                ),
               ],
             ),
-            const SizedBox(height: 20),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.primary,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Text(
-                'Refer and earn ₦800 when the user received their first payment from buyer',
-                style: Theme.of(context).textTheme.bodyMedium,
-              ),
-            ),
-            const SizedBox(height: 20),
-            const Text(
-              'Transactions',
-              style: TextStyle(color: Colors.grey, fontSize: 16),
-            ),
-            const SizedBox(height: 10),
-            Expanded(
-              child: TransactionHistroy(),
-            ),
-          ],
-        ),
+          ),
+          const SizedBox(height: 20),
+          const SizedBox(height: 10),
+        ],
       ),
     );
   }

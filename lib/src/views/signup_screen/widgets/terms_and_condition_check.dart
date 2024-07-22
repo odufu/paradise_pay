@@ -27,7 +27,6 @@ class _TermsAndConditionsRowState extends State<TermsAndConditionsRow> {
               children: [
                 const TextSpan(
                   text: 'By creating an account, I agree to our ',
-                  style: TextStyle(color: Colors.black),
                 ),
                 TextSpan(
                   text: 'Terms and conditions',

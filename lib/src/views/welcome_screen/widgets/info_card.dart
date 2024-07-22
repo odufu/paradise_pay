@@ -16,25 +16,27 @@ class InfoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: AppConstants.kPadding),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          SvgPicture.asset(image), // or Image.asset if using local assets
-          const SizedBox(height: AppConstants.kMargin2),
-          Text(
-            heading,
-            style: Theme.of(context).textTheme.titleMedium,
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: AppConstants.kMargin2),
-          Text(
-            subtitle,
-            style: Theme.of(context).textTheme.bodyLarge,
-            textAlign: TextAlign.center,
-          ),
-        ],
+    return Container(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: AppConstants.kPadding),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SvgPicture.asset(image), // or Image.asset if using local assets
+            const SizedBox(height: AppConstants.kMargin2),
+            Text(
+              heading,
+              style: Theme.of(context).textTheme.titleMedium,
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: AppConstants.kMargin2),
+            Text(
+              subtitle,
+              style: Theme.of(context).textTheme.bodyLarge,
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
       ),
     );
   }

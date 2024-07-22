@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:paradise_pay/config/constants.dart';
 import 'package:paradise_pay/src/views/login/login_screen.dart';
 import 'package:paradise_pay/src/widgets/app_button.dart';
@@ -10,20 +9,14 @@ class NavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: Colors.white,
       child: ListView(
         children: [
           Expanded(
               child: Column(
             children: [
               UserAccountsDrawerHeader(
-                accountName: Text(
-                  "Hllo Kate",
-                  style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Theme.of(context).colorScheme.onPrimary),
-                ),
+                accountName: Text("Hllo Kate",
+                    style: Theme.of(context).textTheme.titleLarge),
                 accountEmail: Text("Kateoshawa@gmail.com"),
                 currentAccountPicture: CircleAvatar(
                   child: ClipOval(
@@ -74,7 +67,7 @@ class NavBar extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: AppButton(
-                backGroundColor: Colors.white,
+                backGroundColor: Theme.of(context).colorScheme.surface,
                 borderColor: Theme.of(context).colorScheme.error,
                 color: Theme.of(context).colorScheme.error,
                 actionText: "Logout",

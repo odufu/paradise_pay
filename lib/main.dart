@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         title: 'ParadisePay',
         theme: AppThemes.lightTheme,
         darkTheme: AppThemes.darkTheme,
-        themeMode: ThemeMode.dark,
+        themeMode: ThemeMode.light,
         home: SplashScreen(),
       );
     });
