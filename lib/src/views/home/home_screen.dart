@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:paradise_pay/config/constants.dart';
 import 'package:paradise_pay/src/views/home/widgets/transaction_widgets.dart';
+import 'package:paradise_pay/src/views/my_qr_code/my_qr_code_screen.dart';
+import 'package:paradise_pay/src/views/scan_to_pay/qr_scanner_page.dart';
 import 'package:paradise_pay/src/widgets/app_button.dart';
 import 'package:paradise_pay/src/widgets/nav_bar.dart';
 
@@ -79,12 +81,26 @@ class HomeScreen extends StatelessWidget {
                       mainAxisSpacing: 3,
                       crossAxisSpacing: 10,
                       children: [
-                        _buildQuickAction(Icons.qr_code, 'Scan to Pay'),
-                        _buildQuickAction(Icons.qr_code_2, 'Get QR Code'),
-                        _buildQuickAction(Icons.send, 'Send Money'),
-                        _buildQuickAction(Icons.request_page, 'Request Money'),
-                        _buildQuickAction(Icons.receipt, 'Pay bills'),
-                        _buildQuickAction(Icons.more_horiz, 'More'),
+                        _buildQuickAction(Icons.qr_code, 'Scan to Pay', () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => QRScannerPage()),
+                          );
+                        }),
+                        _buildQuickAction(
+                            Icons.qr_code_2, 'Get QR Code', () {
+                              Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MyQRCodePage()),
+                          );
+                            }),
+                        _buildQuickAction(Icons.send, 'Send Money', () {}),
+                        _buildQuickAction(
+                            Icons.request_page, 'Request Money', () {}),
+                        _buildQuickAction(Icons.receipt, 'Pay bills', () {}),
+                        _buildQuickAction(Icons.more_horiz, 'More', () {}),
                       ],
                     ),
                     const SizedBox(height: 10),
@@ -159,11 +175,9 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildQuickAction(IconData icon, String label) {
+  Widget _buildQuickAction(IconData icon, String label, ontap) {
     return InkWell(
-      onTap: () {
-        print("Yet to Imploment " + label);
-      },
+      onTap: ontap,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

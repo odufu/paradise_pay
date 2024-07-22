@@ -47,6 +47,10 @@ class SvgAssets {
   static const String hamBurgerMenu = "assets/images/hamBurgerMenu.svg";
   static const String kateOshawa = "assets/images/kateOshawa.svg";
   static const String usmanOloja = "assets/images/usmanOlaja.svg";
+
+  //QR CODE ASSETS
+
+  static const String qrCode = "assets/images/qrcode.png";
 }
 
 class PngAssets {

@@ -39,6 +39,9 @@ dependencies:
   webview_flutter: ^4.8.0
   smooth_page_indicator: ^1.2.0
   google_fonts: ^6.2.1
+  qr_code_scanner: ^1.0.1
+  share_plus: ^7.2.2
+  image_gallery_saver: ^2.0.3
 
 dev_dependencies:
   flutter_test:
