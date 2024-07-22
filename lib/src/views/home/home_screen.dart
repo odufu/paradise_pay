@@ -12,9 +12,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: NavBar(),
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
         elevation: 0,
         leading: Builder(
           builder: (context) {
@@ -44,15 +42,12 @@ class HomeScreen extends StatelessWidget {
           children: [
             const Text(
               'Total Balance',
-              style: TextStyle(color: Colors.grey, fontSize: 16),
+              style: TextStyle(fontSize: 16),
             ),
             const SizedBox(height: 5),
-            const Text(
+            Text(
               '₦ 156,330.00',
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold),
+              style: Theme.of(context).textTheme.headlineLarge,
             ),
             const SizedBox(height: 10),
             AppButton(
@@ -84,12 +79,12 @@ class HomeScreen extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               decoration: BoxDecoration(
-                color: const Color(0xFF0063F4),
+                color: Theme.of(context).colorScheme.primary,
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: const Text(
+              child: Text(
                 'Refer and earn ₦800 when the user received their first payment from buyer',
-                style: TextStyle(color: Colors.white),
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
             ),
             const SizedBox(height: 20),
