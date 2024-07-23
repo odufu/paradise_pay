@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:paradise_pay/config/constants.dart';
+import 'package:paradise_pay/src/views/coming_soon.dart';
 import 'package:paradise_pay/src/views/home/widgets/transaction_widgets.dart';
 import 'package:paradise_pay/src/views/my_qr_code/my_qr_code_screen.dart';
 import 'package:paradise_pay/src/views/scan_to_pay/qr_scanner_page.dart';
@@ -33,8 +34,15 @@ class HomeScreen extends StatelessWidget {
             );
           },
         ),
-        actions: const [
-          Icon(Icons.notifications_outlined, color: Colors.grey),
+        actions: [
+          InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ComingSoon()),
+                );
+              },
+              child: Icon(Icons.notifications_outlined, color: Colors.grey)),
           SizedBox(width: 10),
           Icon(Icons.more_vert, color: Colors.grey),
           SizedBox(width: 10),
@@ -66,7 +74,11 @@ class HomeScreen extends StatelessWidget {
                         AppButton(
                             actionText: "+ Add Money",
                             action: () {
-                              print("Yet to Impliment Add money");
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ComingSoon()),
+                              );
                             }),
                       ],
                     ),
@@ -88,19 +100,42 @@ class HomeScreen extends StatelessWidget {
                                 builder: (context) => QRScannerPage()),
                           );
                         }),
-                        _buildQuickAction(
-                            Icons.qr_code_2, 'Get QR Code', () {
-                              Navigator.push(
+                        _buildQuickAction(Icons.qr_code_2, 'Get QR Code', () {
+                          Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => MyQRCodePage()),
                           );
-                            }),
-                        _buildQuickAction(Icons.send, 'Send Money', () {}),
-                        _buildQuickAction(
-                            Icons.request_page, 'Request Money', () {}),
-                        _buildQuickAction(Icons.receipt, 'Pay bills', () {}),
-                        _buildQuickAction(Icons.more_horiz, 'More', () {}),
+                        }),
+                        _buildQuickAction(Icons.send, 'Send Money', () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ComingSoon()),
+                          );
+                        }),
+                        _buildQuickAction(Icons.request_page, 'Request Money',
+                            () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ComingSoon()),
+                          );
+                        }),
+                        _buildQuickAction(Icons.receipt, 'Pay bills', () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ComingSoon()),
+                          );
+                        }),
+                        _buildQuickAction(Icons.more_horiz, 'More', () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ComingSoon()),
+                          );
+                        }),
                       ],
                     ),
                     const SizedBox(height: 10),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:paradise_pay/config/themes/themes.dart';
 import 'package:paradise_pay/provider/theme_provider.dart';
+import 'package:paradise_pay/src/views/coming_soon.dart';
 import 'package:paradise_pay/src/views/splash_screen.dart';
 import "package:provider/provider.dart";
 
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         title: 'ParadisePay',
         theme: AppThemes.lightTheme,
         darkTheme: AppThemes.darkTheme,
-        themeMode: ThemeMode.light,
+        themeMode: ThemeMode.dark,
         home: SplashScreen(),
       );
     });

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:paradise_pay/config/constants.dart';
+import 'package:paradise_pay/src/views/coming_soon.dart';
 import 'package:paradise_pay/src/views/login/login_screen.dart';
 import 'package:paradise_pay/src/widgets/app_button.dart';
 
@@ -33,33 +34,46 @@ class NavBar extends StatelessWidget {
                 Icons.person_outline,
                 "Account Details",
                 () {
-                  print(
-                    "Welcome to Account",
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ComingSoon()),
                   );
                 },
               ),
               buildTitle(Icons.notifications_outlined, "Notifications", () {
-                print("Welcome to axxount");
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ComingSoon()),
+                );
               }, "3"),
               buildTitle(
                 Icons.card_giftcard_outlined,
                 "Reward",
                 () {
-                  print("Welcome to axxount");
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ComingSoon()),
+                  );
                 },
               ),
               buildTitle(
                 Icons.wallet_giftcard_outlined,
                 "Withdrawal",
                 () {
-                  print("Settings");
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ComingSoon()),
+                  );
                 },
               ),
               buildTitle(
                 Icons.settings_outlined,
                 "Settings",
                 () {
-                  print("Costumer Service");
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ComingSoon()),
+                  );
                 },
               ),
             ],
