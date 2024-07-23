@@ -22,7 +22,6 @@ class CustomExpandingDotsEffect extends ExpandingDotsEffect {
           paintStyle: paintStyle,
         );
 
-  @override
   void paint(Canvas canvas, Size size, int pageIndex, int itemCount,
       double dotOffset, double expansion, bool isCurrent) {
     final paint = Paint()

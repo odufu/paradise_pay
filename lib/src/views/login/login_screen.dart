@@ -1,4 +1,3 @@
-import 'dart:math';
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -6,12 +5,9 @@ import 'package:flutter_svg/svg.dart';
 import 'package:paradise_pay/src/views/home/home_screen.dart';
 import 'package:paradise_pay/src/views/signup_screen/signup_screen.dart';
 import 'package:paradise_pay/src/views/signup_screen/widgets/costom_divider.dart';
-import 'package:paradise_pay/src/views/signup_screen/widgets/country_code_picker.dart';
 import 'package:paradise_pay/src/views/signup_screen/widgets/o_auth.dart';
-import 'package:paradise_pay/src/views/signup_screen/widgets/terms_and_condition_check.dart';
 import 'package:paradise_pay/src/widgets/app_button.dart';
 import 'package:paradise_pay/src/widgets/costom_text_field.dart';
-import 'package:paradise_pay/src/widgets/text_input.dart';
 import '../../../../../config/constants.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -32,7 +28,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
       appBar: AppBar(

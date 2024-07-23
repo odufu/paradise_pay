@@ -2,7 +2,6 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:paradise_pay/src/views/login/login_screen.dart';
 import 'package:paradise_pay/src/views/otp/otp_screen.dart';
-import 'package:paradise_pay/src/views/otp/widget/otp_input.dart';
 import 'package:paradise_pay/src/views/signup_screen/widgets/country_code_picker.dart';
 import 'package:paradise_pay/src/views/signup_screen/widgets/terms_and_condition_check.dart';
 import 'package:paradise_pay/src/widgets/app_button.dart';
@@ -17,7 +16,6 @@ class SignUpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
       appBar: AppBar(
