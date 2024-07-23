@@ -5,7 +5,7 @@
     "ios": true,
     ".vscode": true,
     ".idea": true,
-    ".dart_tool": true,
-    "windows": true
-  }
+    ".dart_tool": true
+  },
+  "java.configuration.updateBuildConfiguration": "interactive"
 }

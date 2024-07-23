@@ -22,9 +22,7 @@ class MyApp extends StatelessWidget {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'ParadisePay',
-        theme: AppThemes.lightTheme,
-        darkTheme: AppThemes.darkTheme,
-        themeMode: ThemeMode.dark,
+        theme: themeProvider.getTheme,
         home: SplashScreen(),
       );
     });

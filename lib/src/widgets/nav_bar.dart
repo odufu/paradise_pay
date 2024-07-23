@@ -10,88 +10,91 @@ class NavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: ListView(
+      child: Column(
         children: [
-          Expanded(
-              child: Column(
-            children: [
-              UserAccountsDrawerHeader(
-                accountName: Text("Hllo Kate",
-                    style: Theme.of(context).textTheme.titleLarge),
-                accountEmail: Text("Kateoshawa@gmail.com"),
-                currentAccountPicture: CircleAvatar(
-                  child: ClipOval(
-                    child: Image.asset(
-                      PngAssets.kate,
-                      width: 90,
-                      height: 90,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
+          UserAccountsDrawerHeader(
+            accountName: Text("Hello Kate",
+                style: Theme.of(context).textTheme.titleLarge),
+            accountEmail: Text("Kateoshawa@gmail.com"),
+            currentAccountPicture: CircleAvatar(
+              child: ClipOval(
+                child: Image.asset(
+                  PngAssets.kate,
+                  width: 90,
+                  height: 90,
+                  fit: BoxFit.cover,
                 ),
               ),
-              buildTitle(
-                Icons.person_outline,
-                "Account Details",
-                () {
+            ),
+          ),
+          Expanded(
+            child: ListView(
+              padding: EdgeInsets.zero,
+              children: [
+                buildTitle(
+                  Icons.person_outline,
+                  "Account Details",
+                  () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ComingSoon()),
+                    );
+                  },
+                ),
+                buildTitle(Icons.notifications_outlined, "Notifications", () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => ComingSoon()),
                   );
-                },
-              ),
-              buildTitle(Icons.notifications_outlined, "Notifications", () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ComingSoon()),
-                );
-              }, "3"),
-              buildTitle(
-                Icons.card_giftcard_outlined,
-                "Reward",
-                () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ComingSoon()),
-                  );
-                },
-              ),
-              buildTitle(
-                Icons.wallet_giftcard_outlined,
-                "Withdrawal",
-                () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ComingSoon()),
-                  );
-                },
-              ),
-              buildTitle(
-                Icons.settings_outlined,
-                "Settings",
-                () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ComingSoon()),
-                  );
-                },
-              ),
-            ],
-          )),
+                }, "3"),
+                buildTitle(
+                  Icons.card_giftcard_outlined,
+                  "Reward",
+                  () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ComingSoon()),
+                    );
+                  },
+                ),
+                buildTitle(
+                  Icons.wallet_giftcard_outlined,
+                  "Withdrawal",
+                  () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ComingSoon()),
+                    );
+                  },
+                ),
+                buildTitle(
+                  Icons.settings_outlined,
+                  "Settings",
+                  () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ComingSoon()),
+                    );
+                  },
+                ),
+              ],
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: AppButton(
-                backGroundColor: Theme.of(context).colorScheme.surface,
-                borderColor: Theme.of(context).colorScheme.error,
-                color: Theme.of(context).colorScheme.error,
-                actionText: "Logout",
-                action: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => LoginScreen()),
-                  );
-                }),
-          )
+              backGroundColor: Theme.of(context).colorScheme.surface,
+              borderColor: Theme.of(context).colorScheme.error,
+              color: Theme.of(context).colorScheme.error,
+              actionText: "Logout",
+              action: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginScreen()),
+                );
+              },
+            ),
+          ),
         ],
       ),
     );
