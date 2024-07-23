@@ -20,6 +20,15 @@ class SignUpScreen extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.surface,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
+      ),
       body: Padding(
         padding: EdgeInsets.symmetric(
             vertical: AppConstants.kPadding, horizontal: AppConstants.kPadding),
@@ -112,9 +121,10 @@ class SignUpScreen extends StatelessWidget {
                   ),
                   RichText(
                       text: TextSpan(children: [
-                    const TextSpan(
-                        text: "Already have an account?",
-                        style: TextStyle(color: Colors.grey)),
+                    TextSpan(
+                        text: "Already have an account? ",
+                        style: TextStyle(
+                            color: Theme.of(context).colorScheme.onSurface)),
                     TextSpan(
                         text: "Sign in",
                         style: TextStyle(

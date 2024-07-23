@@ -25,9 +25,10 @@ class _TermsAndConditionsRowState extends State<TermsAndConditionsRow> {
           child: RichText(
             text: TextSpan(
               children: [
-                const TextSpan(
-                  text: 'By creating an account, I agree to our ',
-                ),
+                TextSpan(
+                    text: 'By creating an account, I agree to our ',
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.onSurface)),
                 TextSpan(
                   text: 'Terms and conditions',
                   style: TextStyle(color: Colors.blue),

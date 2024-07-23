@@ -35,6 +35,15 @@ class _LoginScreenState extends State<LoginScreen> {
     double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.surface,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
+      ),
       body: Padding(
         padding: EdgeInsets.symmetric(
             vertical: AppConstants.kPadding, horizontal: AppConstants.kPadding),
@@ -89,19 +98,14 @@ class _LoginScreenState extends State<LoginScreen> {
             const SizedBox(
               height: AppConstants.kAppBigPadding,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                AppButton(
-                    actionText: "LOG IN",
-                    action: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => HomeScreen()),
-                      );
-                    }),
-              ],
-            ),
+            AppButton(
+                actionText: "LOG IN",
+                action: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomeScreen()),
+                  );
+                }),
             const SizedBox(height: AppConstants.kPadding),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
